@@ -33,6 +33,8 @@ export default function HomePage() {
       .then((res) => res.json())
       .then((data) => setFeedbackData(data.feedback));
   };
+
+
   return (
     <div>
       <h1>홈페이지</h1>
@@ -50,7 +52,10 @@ export default function HomePage() {
       <br />
       <button onClick={getFeedback}>작성된 피드백 보기</button>
       {feedbackData.map((item) => (
-        <p key={item.id}>{item.feedback}</p>
+        <div key={item.id}>
+          <p>{item.feedback} </p>
+        
+        </div>
       ))}
     </div>
   );
